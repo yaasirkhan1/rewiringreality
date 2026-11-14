@@ -375,7 +375,7 @@ var track=document.getElementById('track');
 function rawProgress(){ var y = lenis ? lenis.scroll : scrollY; return clamp(y/(track.offsetHeight - H),0,1); }
 var COARSE = matchMedia('(pointer: coarse)').matches;
 var PACE = 1/20;      /* fastest allowed: whole site in 20s on phones and computers */
-var LEAD = COARSE ? .012 : .02;       /* how far the scroll may run ahead of the film before it is held back */
+var LEAD = COARSE ? .075 : .03;       /* how far the scroll may run ahead of the film before it is held back; on phones about one full swipe, so no swipe is thrown away */
 var head=null, headT=0, snap=true;
 function progress(){
   var tgt=rawProgress(), now=performance.now();
